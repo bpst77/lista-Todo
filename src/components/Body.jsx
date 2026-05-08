@@ -1,5 +1,6 @@
-import { Component } from 'react';
-import '/src/App.css'
+import '/src/App.css';
+import FormAdd from './forms/FormAdd';
+import FormEdit from './forms/FormEdit';
 
 /* 
     ideia !
@@ -43,42 +44,13 @@ const BodyMain = () => (
     </section>
 )
 
-/*Adicionar*/
-const FormAdd = () => (
-    <form>
-        <label htmlFor="atividade">Atividade:</label>
-        <input type="text" id="atividade" name="atividade" />
-
-        <label htmlFor="prioridade">Prioridade:</label>
-        <select id="prioridade" name="prioridade">
-            <option value="alta">Alta</option>
-            <option value="media">Média</option>
-            <option value="baixa">Baixa</option>
-        </select>
-
-        <button type="submit">Adicionar</button>
-        <button>Voltar</button>
-    </form>
+const Body = () => (
+    <>
+    <BodyTabela />
+    <BodyBotons />
+    <FormAdd />
+    <FormEdit />
+    </>
 )
 
-/*editar*/
-const FormEdit = () => (
-    <form>
-        <p>Id: parara</p>
-
-        <label htmlFor="atividade">Atividade:</label>
-        <input type="text" id="atividade" name="atividade" />
-        
-        <label htmlFor="prioridade">Prioridade:</label>
-        <select id="prioridade" name="prioridade">
-            <option value="alta">Alta</option>
-            <option value="media">Média</option>
-            <option value="baixa">Baixa</option>
-        </select>
-
-        <button type="submit">Salvar</button>
-        <button>Voltar</button>
-    </form>
-)
-
-export {BodyMain, FormAdd, FormEdit};
+export default Body;
