@@ -1,3 +1,5 @@
 {
-"animais": []
+  "tarefas": [
+    { "id": "1", "atividade": "Estudar React 2026", "status": "pendente" }
+  ]
 }
