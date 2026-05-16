@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import Header from "./components/Header";
 import Body from "./components/Body";
-import FormAdd from "../components/forms/FormAdd.jsx";
-import FormEdit from "../components/forms/FormAFormEditdd.jsx";
+import FormAdd from "./forms/FormAdd";
+import FormEdit from "./forms/FormEdit";
 import Footer from "./components/Footer";
+
 function App() {
   const [tarefas, setTarefas] = useState([]);
-  const [editando, setEditando] = useState(null); // Armazena a tarefa que está sendo editada
-  const API_URL = "http://localhost:3001/tarefas";
+  const [editando, setEditando] = useState(null); 
+  const API_URL = "https://6a08b005e7e3f433d482c367.mockapi.io/:endpoint";
 
-  // READ - Semana 1
   useEffect(() => {
     const carregarTarefas = async () => {
       const res = await fetch(API_URL);
@@ -19,7 +19,6 @@ function App() {
     carregarTarefas();
   }, []);
 
-  // CREATE - Semana 2
   const adicionarTarefa = async (texto) => {
     const nova = { atividade: texto, status: "pendente" };
     const res = await fetch(API_URL, {
@@ -75,6 +74,16 @@ function App() {
         ) : (
           <FormAdd aoAdicionar={adicionarTarefa} />
         )}
+
+        {/* Coloque isso dentro do return do App.jsx, embaixo dos Formulários */}
+<div className="flex justify-between items-center bg-white border border-gray-100 rounded-2xl p-4 mt-6 shadow-sm">
+  <div className="text-sm font-medium text-gray-500">
+    Total de tarefas: <span className="text-gray-800 font-bold">{tarefas.length}</span>
+  </div>
+  <div className="text-sm font-medium text-green-600 bg-green-50 px-3 py-1 rounded-full">
+    Concluídas: {tarefas.filter(t => t.status === 'concluido').length} de {tarefas.length}
+  </div>
+</div>
 
         <Body 
           tarefas={tarefas} 
