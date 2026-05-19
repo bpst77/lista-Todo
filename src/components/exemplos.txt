@@ -1,0 +1,62 @@
+exemplos jsx
+    container simples-
+    <div>
+      <h1>Get started</h1>
+      <p>
+      Não edite <code>src/App.jsx</code> and save to test <code>HMR</code>
+      </p>
+    </div>
+
+    atributos em elementos-
+    <button
+      type="button"
+      className="counter"
+      onClick={() => setCount((count) => count + 1)}
+    >
+      Count is {count}
+    </button>
+
+exemplos css
+
+seletores:
+  . - classe
+  # - id
+  *lembrar dos seletores pseudo-classes e pseudo-elementos
+
+  exemplo simples 
+    #center {
+    display: flex;
+    flex-direction: column;
+  }
+
+  mais de um
+  #center, #outro {
+    display: flex;
+    flex-direction: column;
+  }
+
+  relação (um dentro do outro)
+  .counter {
+    font-size: 16px;
+
+    .outro {
+      border-color: var(--accent-border);
+    }
+  }
+
+  relação (consigo mesmo)
+  .counter {
+    font-size: 16px;
+
+    &:hover {
+      border-color: var(--accent-border);
+    }
+  }
+
+:root {
+  --text: #6b6375;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+}
