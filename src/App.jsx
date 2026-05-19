@@ -10,7 +10,7 @@ function App() {
   const [tarefas, setTarefas] = useState([]);
   const [editando, setEditando] = useState(null);
   const [filtro, setFiltro] = useState('todas');
-  const API_URL = "http://localhost:3000/tarefas";
+  const API_URL = "https://6a0b46a521e445625697b073.mockapi.io/bpst/tarefas";
 
   // READ
   useEffect(() => {
@@ -52,7 +52,7 @@ function App() {
     try {
       const nuevoStatus = tarefa.status === "concluido" ? "pendente" : "concluido";
       const res = await fetch(`${API_URL}/${tarefa.id}`, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: nuevoStatus })
       });
@@ -73,7 +73,7 @@ function App() {
   const salvarEdicao = async (id, novoTexto) => {
     try {
       const res = await fetch(`${API_URL}/${id}`, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ atividade: novoTexto })
       });

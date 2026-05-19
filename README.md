@@ -4,7 +4,7 @@ Projeto de aplicação web usando 'React' desenvolvido para a disciplina de "Pro
 ## Detalhes
 - Framework React
 - Framework Tailwind (css)
-- JSON Server (API simulada)
+- MockAPI (API simulada)
 
 ## Grupo
 - Gean Bandeira
