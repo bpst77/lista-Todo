@@ -2,7 +2,7 @@
   "tarefas": [
     {
       "atividade": "sei la",
-      "status": "pendente",
+      "status": "concluido",
       "id": "1"
     },
     {
@@ -12,7 +12,7 @@
     },
     {
       "atividade": "haha",
-      "status": "concluido",
+      "status": "pendente",
       "id": "3"
     }
   ],
